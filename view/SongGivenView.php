@@ -15,13 +15,11 @@
             <?php echo $songCategory; ?>
         </li>
 	</ul>
-    
 <?php
     echo '
         <a 
             href="'.$songPath.'"
-            download="'.$songFileName.'"
-            onclick="downloadSong()" 
+            download="'.$songFileName.'" 
             class="btn btn-primary"
             title="DOWNLOAD PLS"
         >
@@ -30,5 +28,4 @@
         </a>
     ';
 ?>
-
 </div>

@@ -1,5 +1,4 @@
 <?php
-  
       define('__ROOT__', '../');
       define('__VIEW__', __ROOT__.'view/');
       define('__MODEL__', __ROOT__.'model/');
@@ -20,5 +19,4 @@
 
       // song given view + download button
       require_once(__VIEW__.'SongGivenView.php');
-   
 ?>

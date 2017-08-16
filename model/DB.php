@@ -1,5 +1,4 @@
 <?php
-    
     class DataBase
     {
 
@@ -54,5 +53,4 @@
             return (new Song('My super song', '../song_collector/song-one.mp3', 'Blue Swede'));
         }
     }
-
 ?>
