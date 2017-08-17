@@ -1,39 +1,39 @@
 <h1>Upload a file here!</h1>
 <div id="custom-upload-form-div">
 	<form class="form-horizontal">
-		<div class="input-group">
+		<div class="input-group col-xs-offset-2 col-xs-8 col-sm-offset-2 col-sm-8 col-md-offset-2 col-md-8 col-lg-offset-2 col-lg-8">
             <span class="input-group-addon" id="title-addon">
                 <span class="glyphicon glyphicon-font" aria-hidden="true"></span>
             </span>
-            <input type="text" class="form-control" placeholder="Song title" aria-describedby="title-addon">
+            <input type="text" class="form-control" placeholder="Song title" aria-describedby="title-addon" name="song-title-input" id="song-title-input" required="true" autofocus="true">
         </div>
         <br>
-        <div class="input-group">
+        <div class="input-group col-xs-offset-2 col-xs-8 col-sm-offset-2 col-sm-8 col-md-offset-2 col-md-8 col-lg-offset-2 col-lg-8">
             <span class="input-group-addon" id="artist-addon">
                 <span class="glyphicon glyphicon-user" aria-hidden="true"></span>
             </span>
-            <input type="text" class="form-control" placeholder="Artist" aria-describedby="artist-addon">
+            <input type="text" class="form-control" placeholder="Artist" aria-describedby="artist-addon" name="artist-input" id="artist-input">
         </div>
         <br>
-        <div class="input-group">
+        <div class="input-group col-xs-offset-2 col-xs-8 col-sm-offset-2 col-sm-8 col-md-offset-2 col-md-8 col-lg-offset-2 col-lg-8">
             <span class="input-group-addon" id="album-addon">
                 <span class="glyphicon glyphicon-cd" aria-hidden="true"></span>
             </span>
-            <input type="text" class="form-control" placeholder="Album" aria-describedby="album-addon">
+            <input type="text" class="form-control" placeholder="Album" aria-describedby="album-addon" name="album-input" id="album-input">
         </div>
         <br>
-        <div class="input-group">
+        <div class="input-group col-xs-offset-2 col-xs-8 col-sm-offset-2 col-sm-8 col-md-offset-2 col-md-8 col-lg-offset-2 col-lg-8">
             <span class="input-group-addon" id="genre-addon">
                 <span class="glyphicon glyphicon-music" aria-hidden="true"></span>
             </span>
-            <input type="text" class="form-control" placeholder="Genre" aria-describedby="genre-addon">
+            <input type="text" class="form-control" placeholder="Genre" aria-describedby="genre-addon" name="genre-input" id="genre-input">
         </div>
         <br>
-        <div class="form-group">
-            <input type="file">
+        <div class="input-group col-xs-offset-2 col-xs-8 col-sm-offset-2 col-sm-8 col-md-offset-2 col-md-8 col-lg-offset-2 col-lg-8">
+            <input type="file" name="file-input" id="file-input" required="true">
         </div>
-        <button type="submit" class="btn btn-primary">
-            <span class="glyphicon glyphicon-cloud-upload" aria-hidden="true"></span>
-        </button>
+        <a onclick="uploadSong()" href="#" class="btn btn-primary btn-lg" title="Upload">
+        	<span class="glyphicon glyphicon-cloud-upload" aria-hidden="true"></span>
+        </a>
 	</form>
 </div>

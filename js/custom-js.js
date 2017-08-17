@@ -83,5 +83,12 @@ function getAboutView() {
     xmlhttp.send();
 }
 
+/**
+ *
+ */
+function uploadSong() {
+    console.log('UPLOAD SONG UNDER CONSTRUCTION');
+}
+
 /* When document is ready, by default give download view */
 $('document').ready(getDownloadView());
