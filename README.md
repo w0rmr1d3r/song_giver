@@ -5,3 +5,6 @@ Web page for random music
 spoti ?
 upload songs
 random song giver
+rest uri
+careful defines
+navbar links set to current

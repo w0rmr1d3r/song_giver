@@ -6,7 +6,7 @@
       require_once(__MODEL__.'DB.php');
       require_once(__MODEL__.'Song.php');
 
-      // song given view + download button
+      // song given
       $DB = DataBase::getInstance();
       $mySong = $DB->getSongTest();
 

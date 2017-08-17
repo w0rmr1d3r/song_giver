@@ -21,11 +21,67 @@ function getSong() {
     {
         if (xmlhttp.readyState == 4 && xmlhttp.status == 200)
         {
-            var songDiv = document.getElementById('custom-song-given-div');
-            songDiv.style.display = 'block';
-            songDiv.innerHTML = xmlhttp.responseText;
+            var songDiv = document.getElementById('custom-main-container');
+            songDiv.innerHTML += xmlhttp.responseText;
         }
     };
     xmlhttp.open('POST', '../controller/RandomSongController.php');
     xmlhttp.send();
 }
+
+/**
+ * Gets the upload view
+ */
+function getUploadView() {
+    var xmlhttp = getXMLHTTP();
+
+    xmlhttp.onreadystatechange = function()
+    {
+        if (xmlhttp.readyState == 4 && xmlhttp.status == 200)
+        {
+            var div = document.getElementById('custom-main-container');
+            div.innerHTML = xmlhttp.responseText;
+        }
+    };
+    xmlhttp.open('POST', '../controller/UploadSongController.php');
+    xmlhttp.send();
+}
+
+/**
+ * Gets the download view
+ */
+function getDownloadView() {
+    var xmlhttp = getXMLHTTP();
+
+    xmlhttp.onreadystatechange = function()
+    {
+        if (xmlhttp.readyState == 4 && xmlhttp.status == 200)
+        {
+            var div = document.getElementById('custom-main-container');
+            div.innerHTML = xmlhttp.responseText;
+        }
+    };
+    xmlhttp.open('POST', '../controller/DownloadSongController.php');
+    xmlhttp.send();
+}
+
+/**
+ * Gets the about view
+ */
+function getAboutView() {
+    var xmlhttp = getXMLHTTP();
+
+    xmlhttp.onreadystatechange = function()
+    {
+        if (xmlhttp.readyState == 4 && xmlhttp.status == 200)
+        {
+            var div = document.getElementById('custom-main-container');
+            div.innerHTML = xmlhttp.responseText;
+        }
+    };
+    xmlhttp.open('POST', '../controller/AboutController.php');
+    xmlhttp.send();
+}
+
+/* When document is ready, by default give download view */
+$('document').ready(getDownloadView());
