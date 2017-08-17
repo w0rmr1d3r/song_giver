@@ -23,6 +23,7 @@
          
         /**
          * Gets instance of Singleton DB
+         * @return DataBase
          */
         public static function getInstance()
         {
@@ -36,6 +37,7 @@
 
         /**
          * Closes connection and destroys self instance
+         * @return void
          */
         public function closeConnection()
         {

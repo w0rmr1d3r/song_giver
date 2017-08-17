@@ -1,32 +1,39 @@
 <h1>Upload a file here!</h1>
 <div id="custom-upload-form-div">
-    <div class="input-group">
-        <span class="input-group-addon" id="title-addon">
-           <span class="glyphicon glyphicon-font" aria-hidden="true"></span>
-        </span>
-        <input type="text" class="form-control" placeholder="Song title" aria-describedby="title-addon">
-    </div>
-    <br>
-    <div class="input-group">
-        <span class="input-group-addon" id="artist-addon">
-            <span class="glyphicon glyphicon-user" aria-hidden="true"></span>
-        </span>
-        <input type="text" class="form-control" placeholder="Artist" aria-describedby="artist-addon">
-    </div>
-    <br>
-    <div class="input-group">
-        <span class="input-group-addon" id="album-addon">
-            <span class="glyphicon glyphicon-cd" aria-hidden="true"></span>
-        </span>
-        <input type="text" class="form-control" placeholder="Album" aria-describedby="album-addon">
-    </div>
-    <br>
-    <div class="input-group">
-        <span class="input-group-addon" id="genre-addon">
-            <span class="glyphicon glyphicon-music" aria-hidden="true"></span>
-        </span>
-        <input type="text" class="form-control" placeholder="Genre" aria-describedby="genre-addon">
-    </div>
-    <h3>SELECT FILE HERE</h3>
-    <h3>button to upload here</h3>
+	<form class="form-horizontal">
+		<div class="input-group">
+            <span class="input-group-addon" id="title-addon">
+                <span class="glyphicon glyphicon-font" aria-hidden="true"></span>
+            </span>
+            <input type="text" class="form-control" placeholder="Song title" aria-describedby="title-addon">
+        </div>
+        <br>
+        <div class="input-group">
+            <span class="input-group-addon" id="artist-addon">
+                <span class="glyphicon glyphicon-user" aria-hidden="true"></span>
+            </span>
+            <input type="text" class="form-control" placeholder="Artist" aria-describedby="artist-addon">
+        </div>
+        <br>
+        <div class="input-group">
+            <span class="input-group-addon" id="album-addon">
+                <span class="glyphicon glyphicon-cd" aria-hidden="true"></span>
+            </span>
+            <input type="text" class="form-control" placeholder="Album" aria-describedby="album-addon">
+        </div>
+        <br>
+        <div class="input-group">
+            <span class="input-group-addon" id="genre-addon">
+                <span class="glyphicon glyphicon-music" aria-hidden="true"></span>
+            </span>
+            <input type="text" class="form-control" placeholder="Genre" aria-describedby="genre-addon">
+        </div>
+        <br>
+        <div class="form-group">
+            <input type="file">
+        </div>
+        <button type="submit" class="btn btn-primary">
+            <span class="glyphicon glyphicon-cloud-upload" aria-hidden="true"></span>
+        </button>
+	</form>
 </div>
