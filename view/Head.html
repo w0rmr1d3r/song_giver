@@ -24,9 +24,16 @@
 			<div class="container">
 				<p class="navbar-text navbar-left">Welcome to the song downloader!</p>
 				<ul class="nav navbar-nav">
-        			<li><a onclick="getDownloadView()" href="#">Download</a></li>
-        			<li><a onclick="getUploadView()" href="#">Upload</a></li>
-        			<li><a onclick="getAboutView()" href="#">About</a></li>
+        			<li id="custom-download-li">
+        				<a onclick="getDownloadView()" href="#">Download</a>
+        			</li>
+        			<li id="custom-upload-li">
+        				<a onclick="getUploadView()" href="#">Upload</a>
+        			</li>
+        			<li id="custom-about-li">
+        				<a onclick="getAboutView()" href="#">About</a>
+        			</li>
         		</ul>
 			</div>
 		</nav>
+		<div class="container-fluid text-center" id="custom-main-container"></div>

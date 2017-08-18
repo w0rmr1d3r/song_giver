@@ -3,12 +3,27 @@
  Made by w0rmr1d3r
 */
 
+/*
+ Global vars
+*/
+/* Current selected section, by default download section */
+var currentSelected = 'custom-download-li';
+
 /**
  * Gets an object XMLHTTP for each browser
  * @return {XMLHttpRequest || ActiveXObject}
  */
 function getXMLHTTP() {
     return (window.XMLHttpRequest ? new XMLHttpRequest() : new ActiveXObject("Microsoft.XMLHTTP"));
+}
+
+/**
+ * Sets colour for the selected section
+ */
+function setSelectedSection(selected) {
+    document.getElementById(currentSelected).style.backgroundColor = '';
+    document.getElementById(selected).style.backgroundColor = '#B6F5E0';
+    currentSelected = selected;
 }
 
 /**
@@ -45,6 +60,8 @@ function getUploadView() {
     };
     xmlhttp.open('POST', '../controller/UploadSongController.php');
     xmlhttp.send();
+
+    setSelectedSection('custom-upload-li');
 }
 
 /**
@@ -63,6 +80,8 @@ function getDownloadView() {
     };
     xmlhttp.open('POST', '../controller/DownloadSongController.php');
     xmlhttp.send();
+
+    setSelectedSection('custom-download-li');
 }
 
 /**
@@ -81,6 +100,8 @@ function getAboutView() {
     };
     xmlhttp.open('POST', '../controller/AboutController.php');
     xmlhttp.send();
+
+    setSelectedSection('custom-about-li');
 }
 
 /**
@@ -91,4 +112,8 @@ function uploadSong() {
 }
 
 /* When document is ready, by default give download view */
-$('document').ready(getDownloadView());
+$('document').ready(
+    function() {
+        getDownloadView();
+    }
+);
