@@ -2,7 +2,7 @@
     class DataBase
     {
 
-        private static $instance = null;
+        private static $instance = NULL;
         private static $servername = '';
         private static $username = '';
         private static $password = '';
@@ -42,7 +42,46 @@
         public function closeConnection()
         {
             $this->conn->close();
-            self::$instance = null;
+            self::$instance = NULL;
+        }
+
+        /**
+         * Gets a random song from the DB
+         * @return Song
+         */
+        public function getRandomSong()
+        {
+            $songID = 1; /* RANDOM THIS */
+
+            /* Statement to execute */
+            $stmt = $this->conn->prepare("SELECT title, artist, album, category, path FROM Songs WHERE id=?");
+
+            /* Bind params to the stmt */
+            $stmt->bind_param('i', $songID);
+
+            //unset($songID);
+
+            /* Execute stmt */
+            $stmt->execute();
+
+            /* Link variables to the stmt */
+            $stmt->bind_result($title, $artist, $album, $category, $path);
+
+            /* Obtain data */
+            while($stmt->fetch())
+            {
+                $songTitle;
+                $songArtist;
+                $songAlbum;
+                $songCategory;
+                $songPath;
+            }
+
+            /* Closes stmt and connection */
+            $stmt->close();
+
+            return (new Song($songTitle, $songPath, $songArtist, $songAlbum, $songCategory));
+
         }
 
         /**
@@ -52,7 +91,7 @@
         public function getSongTest()
         {
             require_once('Song.php');
-            return (new Song('My super song', '../song_collector/song-one.mp3', 'Blue Swede'));
+            return (new Song('Hooked on a feeling', '../song_collector/song-one.mp3', 'Blue Swede'));
         }
     }
 ?>

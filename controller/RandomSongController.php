@@ -19,4 +19,21 @@
 
       // song given view + download button
       require_once(__VIEW__.'SongGivenView.php');
+
+      /*
+      // Random song with DB
+      $DB = DataBase::getInstance();
+      $mySong = $DB->getRandomSong();
+      $DB->closeConnection();
+
+      $songTitle = $mySong->getTitle();
+      $songPath = $mySong->getPath();
+      $songFileName = $mySong->getFileName();
+      $songArtist = $mySong->getArtist();
+      $songAlbum = $mySong->getAlbum();
+      $songCategory = $mySong->getCategory();
+
+      // song given view + download button
+      require_once(__VIEW__.'SongGivenView.php');
+      */
 ?>

@@ -3,15 +3,15 @@
     <div class="card-body">
 	    <h4 class="card-title" title="Title"><?php echo $songTitle; ?></h4>
 	    <ul class="list-group">
-		    <li class="list-group-item" title="Artist" style="display:inline-block;">
+		    <li class="list-group-item" title="Artist">
                 <span class="glyphicon glyphicon-user" aria-hidden="true"></span>
                 <?php echo $songArtist; ?>
             </li>
-		    <li class="list-group-item" title="Album" style="display:inline-block;">
+		    <li class="list-group-item" title="Album">
                 <span class="glyphicon glyphicon-cd" aria-hidden="true"></span>
                 <?php echo $songAlbum; ?>
             </li>
-		    <li class="list-group-item" title="Category" style="display:inline-block;">
+		    <li class="list-group-item" title="Category">
                 <span class="glyphicon glyphicon-music" aria-hidden="true"></span>
                 <?php echo $songCategory; ?>
             </li>
