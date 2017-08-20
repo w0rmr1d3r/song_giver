@@ -51,15 +51,8 @@
          */
         public function getRandomSong()
         {
-            $songID = 1; /* RANDOM THIS */
-
             /* Statement to execute */
-            $stmt = $this->conn->prepare("SELECT title, artist, album, category, path FROM Songs WHERE id=?");
-
-            /* Bind params to the stmt */
-            $stmt->bind_param('i', $songID);
-
-            //unset($songID);
+            $stmt = $this->conn->prepare("SELECT title, artist, album, category, path FROM Songs ORDER BY RAND() LIMIT 1");
 
             /* Execute stmt */
             $stmt->execute();
@@ -70,17 +63,17 @@
             /* Obtain data */
             while($stmt->fetch())
             {
-                $songTitle;
-                $songArtist;
-                $songAlbum;
-                $songCategory;
-                $songPath;
+                $title;
+                $artist;
+                $album;
+                $category;
+                $path;
             }
 
             /* Closes stmt and connection */
             $stmt->close();
 
-            return (new Song($songTitle, $songPath, $songArtist, $songAlbum, $songCategory));
+            return (new Song($title, $path, $artist, $album, $category));
 
         }
 

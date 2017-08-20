@@ -56,6 +56,7 @@ function getUploadView() {
         {
             var div = document.getElementById('custom-main-container');
             div.innerHTML = xmlhttp.responseText;
+            document.getElementById('song-title-input').focus();
         }
     };
     xmlhttp.open('POST', '../controller/UploadSongController.php');
