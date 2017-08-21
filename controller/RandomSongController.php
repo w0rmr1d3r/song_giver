@@ -6,20 +6,7 @@
     require_once(__MODEL__.'DB.php');
     require_once(__MODEL__.'Song.php');
 
-    // song given
-    /*
-    $DB = DataBase::getInstance();
-    $mySong = $DB->getSongTest();
-
-    $songTitle = $mySong->getTitle();
-    $songPath = $mySong->getPath();
-    $songFileName = $mySong->getFileName();
-    $songArtist = $mySong->getArtist();
-    $songAlbum = $mySong->getAlbum();
-    $songCategory = $mySong->getCategory();
-    */
-
-    // Random song with DB
+    // Random song from DB
     $DB = DataBase::getInstance();
     $mySong = $DB->getRandomSong();
     $DB->closeConnection();

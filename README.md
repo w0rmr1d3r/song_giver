@@ -5,7 +5,6 @@ Web page for music. Downloads, uploads, listening to it, etc.
 <ul>
 	<li>spoti ?</li>
 	<li>upload songs</li>
-	<li>random song giver</li>
 	<li>rest uri</li>
 	<li>TODO adjust song div to size</li>
 	<li>upload form ---> check CSS, JS, HTML correct inputs</li>
