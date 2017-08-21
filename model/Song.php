@@ -30,7 +30,7 @@
             }
             else
             {
-                throw new Exception("ERROR WHILE CREATING SONG", 1);
+                throw new Exception('ERROR WHILE CREATING SONG', 1);
             }
         }
 

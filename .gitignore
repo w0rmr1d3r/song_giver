@@ -1,0 +1,5 @@
+# gitignore file for song_giver repo
+# Made by w0rmr1d3r
+
+# ignore songs for copyright issues
+/song_collector/*

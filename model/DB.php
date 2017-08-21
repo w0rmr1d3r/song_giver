@@ -48,11 +48,12 @@
 
         /**
          * Gets a random song from the DB
+         * It does not use prepared stmt since the query has no external input
          * @return Song
          */
         public function getRandomSong()
         {
-            $query = "SELECT title, artist, album, category, path FROM Songs ORDER BY RAND() LIMIT 1";
+            $query = 'SELECT title, artist, album, category, path FROM Songs ORDER BY RAND() LIMIT 1';
             
             if ($result = $this->conn->query($query))
             {
@@ -66,18 +67,8 @@
             }
             else
             {
-                throw new Exception("ERROR WHILE QUERY TO DB --- GETTING RANDOM SONG ".$query, 1);
+                throw new Exception('ERROR WHILE QUERY TO DB --- GETTING RANDOM SONG ' . $query, 1);
             }
-        }
-
-        /**
-         * TEST Gets a song
-         * @return Song
-         */
-        public function getSongTest()
-        {
-            require_once('Song.php');
-            return (new Song('Hooked on a feeling', '../song_collector/song-one.mp3', 'Blue Swede'));
         }
     }
 ?>
