@@ -1,5 +1,6 @@
 # Song Giver
-Web page for music. Downloads, uploads, listening to it, etc.
+Web page for music. Downloads, uploads, listening to it, etc. <br>
+Use it as you please ;)
 
 # TODO
 <ul>
@@ -9,5 +10,6 @@ Web page for music. Downloads, uploads, listening to it, etc.
 	<li>TODO adjust song div to size</li>
 	<li>upload form ---> check CSS, JS, HTML correct inputs</li>
 	<li>resolve inconsistency with path, filename, and title</li>
-	<li>re-do about footer -> to about section</li>
+	<li>test footer</li>
+	<li>about section</li>
 </ul>
