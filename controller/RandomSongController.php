@@ -6,7 +6,6 @@
     require_once(__MODEL__.'DB.php');
     require_once(__MODEL__.'Song.php');
 
-    // Random song from DB
     $DB = DataBase::getInstance();
     $mySong = $DB->getRandomSong();
     $DB->closeConnection();
@@ -18,6 +17,5 @@
     $songAlbum = $mySong->getAlbum();
     $songCategory = $mySong->getCategory();
 
-    // song given view + download button
     require_once(__VIEW__.'SongGivenView.php');    
 ?>

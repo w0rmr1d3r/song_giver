@@ -28,7 +28,7 @@
          */
         public static function getInstance()
         {
-            if (self::$instance == null)
+            if (is_null(self::$instance))
             {
                 self::$instance = new DataBase();
             }
@@ -67,7 +67,7 @@
             }
             else
             {
-                throw new Exception('ERROR WHILE QUERY TO DB --- GETTING RANDOM SONG ' . $query, 1);
+                throw new Exception('ERROR WHILE QUERY TO DB --- GETTING RANDOM SONG ', 1);
             }
         }
     }
