@@ -18,7 +18,7 @@
         */
         public function __construct($title = NULL, $path = NULL, $artist = 'Artist not found', $album = 'Album not found', $category = 'Category not found')
         {
-            if (!is_null($title) && $title != '' && !is_null($path) && $path != '')
+            if (!is_null($title) && !empty($title) && !is_null($path) && !empty($path))
             {
                 $this->title = $title;
                 $this->path = $path;
