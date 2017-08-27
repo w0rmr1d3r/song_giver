@@ -24,5 +24,5 @@
     else
     {
         require_once(__VIEW__.'ErrorView.html');
-    }  
+    } 
 ?>

@@ -12,4 +12,5 @@ Use it as you please ;)
 	<li>resolve inconsistency with path, filename, and title</li>
 	<li>test footer</li>
 	<li>about section</li>
+	<li>give SQL script for DB</li>
 </ul>
