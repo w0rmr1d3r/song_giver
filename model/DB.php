@@ -50,6 +50,7 @@
          * Gets a random song from the DB
          * It does not use prepared stmt since the query has no external input
          * @return Song
+         * @throws TODO
          */
         public function getRandomSong()
         {

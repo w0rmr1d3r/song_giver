@@ -13,4 +13,9 @@ Use it as you please ;)
 	<li>test footer</li>
 	<li>about section</li>
 	<li>give SQL script for DB</li>
+	<li>log db</li>
+	<li>more logs</li>
+	<li>try catch</li>
+	<li>test exceptions</li>
+	<li>code custom exceptions</li>
 </ul>

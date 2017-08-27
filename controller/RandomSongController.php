@@ -7,11 +7,11 @@
     require_once(__MODEL__.'Song.php');
 
     $DB = DataBase::getInstance();
-    $mySong = $DB->getRandomSong();
-    $DB->closeConnection();
-
-    if ($mySong instanceof Song)
+    
+    try
     {
+        $mySong = $DB->getRandomSong();
+
         $songTitle = $mySong->getTitle();
         $songPath = $mySong->getPath();
         $songFileName = $mySong->getFileName();
@@ -19,10 +19,16 @@
         $songAlbum = $mySong->getAlbum();
         $songCategory = $mySong->getCategory();
 
-        require_once(__VIEW__.'SongGivenView.php');    
+        require_once(__VIEW__.'SongGivenView.php');
     }
-    else
+    catch (Exception $e)
     {
+        // LOG EXCEPTION
+        // $e->getMessage();
         require_once(__VIEW__.'ErrorView.html');
-    } 
+    }
+    finally
+    {
+        $DB->closeConnection();
+    }
 ?>

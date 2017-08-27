@@ -15,6 +15,7 @@
          * @param string $album Song album
          * @param string $category Song category
          * @param string $path Song path
+         * @throws TODO
         */
         public function __construct($title = NULL, $path = NULL, $artist = 'Artist not found', $album = 'Album not found', $category = 'Category not found')
         {
@@ -26,7 +27,6 @@
                 $this->artist = $artist;
                 $this->album = $album;
                 $this->category = $category;
-
             }
             else
             {
