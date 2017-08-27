@@ -10,12 +10,19 @@
     $mySong = $DB->getRandomSong();
     $DB->closeConnection();
 
-    $songTitle = $mySong->getTitle();
-    $songPath = $mySong->getPath();
-    $songFileName = $mySong->getFileName();
-    $songArtist = $mySong->getArtist();
-    $songAlbum = $mySong->getAlbum();
-    $songCategory = $mySong->getCategory();
+    if ($mySong instanceof Song)
+    {
+        $songTitle = $mySong->getTitle();
+        $songPath = $mySong->getPath();
+        $songFileName = $mySong->getFileName();
+        $songArtist = $mySong->getArtist();
+        $songAlbum = $mySong->getAlbum();
+        $songCategory = $mySong->getCategory();
 
-    require_once(__VIEW__.'SongGivenView.php');    
+        require_once(__VIEW__.'SongGivenView.php');    
+    }
+    else
+    {
+        require_once(__VIEW__.'ErrorView.html');
+    }  
 ?>
