@@ -24,7 +24,7 @@
     catch (Exception $e)
     {
         // LOG EXCEPTION
-        // $e->getMessage();
+        // $e->getMessage() . $e->getCode() . $e->getFile() . $e->getLine();
         require_once(__VIEW__.'ErrorView.html');
     }
     finally

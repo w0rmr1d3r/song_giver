@@ -50,7 +50,8 @@
          * Gets a random song from the DB
          * It does not use prepared stmt since the query has no external input
          * @return Song
-         * @throws TODO
+         * @throws Exception if the query cannot be done
+         * @throws Exception if the song cannot be created
          */
         public function getRandomSong()
         {
@@ -68,7 +69,7 @@
             }
             else
             {
-                throw new Exception('ERROR WHILE QUERY TO DB --- GETTING RANDOM SONG ', 1);
+                throw new Exception('ERROR WHILE QUERY TO DB --- GETTING RANDOM SONG', 500);
             }
         }
     }

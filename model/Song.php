@@ -15,7 +15,7 @@
          * @param string $album Song album
          * @param string $category Song category
          * @param string $path Song path
-         * @throws TODO
+         * @throws Exception if the params to construct a song are not correct
         */
         public function __construct($title = NULL, $path = NULL, $artist = 'Artist not found', $album = 'Album not found', $category = 'Category not found')
         {
@@ -30,7 +30,7 @@
             }
             else
             {
-                throw new Exception('ERROR WHILE CREATING SONG', 1);
+                throw new Exception('WRONG PARAMS WHILE CREATING SONG', 1);
             }
         }
 
