@@ -13,7 +13,7 @@ Use it as you please ;)
 	<li>test footer</li>
 	<li>about section</li>
 	<li>give SQL script for DB</li>
-	<li>log db</li>
-	<li>more logs</li>
+	<li>logs</li>
+	<li>test logs</li>
 	<li>test exceptions</li>
 </ul>
