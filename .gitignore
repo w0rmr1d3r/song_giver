@@ -2,3 +2,4 @@
 # Made by w0rmr1d3r
 
 # Exists a gitignore file inside song_collector/ to ignore possible copyrighted files
+# Exists another one inside tmp/ to exclude logs (see model/Logger.php)

@@ -32,10 +32,8 @@ function setSelectedSection(selected) {
 function getSong() {
     var xmlhttp = getXMLHTTP();
 
-    xmlhttp.onreadystatechange = function()
-    {
-        if (xmlhttp.readyState == 4 && xmlhttp.status == 200)
-        {
+    xmlhttp.onreadystatechange = function() {
+        if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
             var songDiv = document.getElementById('custom-main-container');
             songDiv.innerHTML += xmlhttp.responseText;
         }
@@ -50,10 +48,8 @@ function getSong() {
 function getUploadView() {
     var xmlhttp = getXMLHTTP();
 
-    xmlhttp.onreadystatechange = function()
-    {
-        if (xmlhttp.readyState == 4 && xmlhttp.status == 200)
-        {
+    xmlhttp.onreadystatechange = function() {
+        if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
             var div = document.getElementById('custom-main-container');
             div.innerHTML = xmlhttp.responseText;
             document.getElementById('song-title-input').focus();
@@ -71,10 +67,8 @@ function getUploadView() {
 function getDownloadView() {
     var xmlhttp = getXMLHTTP();
 
-    xmlhttp.onreadystatechange = function()
-    {
-        if (xmlhttp.readyState == 4 && xmlhttp.status == 200)
-        {
+    xmlhttp.onreadystatechange = function() {
+        if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
             var div = document.getElementById('custom-main-container');
             div.innerHTML = xmlhttp.responseText;
         }
@@ -91,10 +85,8 @@ function getDownloadView() {
 function getAboutView() {
     var xmlhttp = getXMLHTTP();
 
-    xmlhttp.onreadystatechange = function()
-    {
-        if (xmlhttp.readyState == 4 && xmlhttp.status == 200)
-        {
+    xmlhttp.onreadystatechange = function() {
+        if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
             var div = document.getElementById('custom-main-container');
             div.innerHTML = xmlhttp.responseText;
         }

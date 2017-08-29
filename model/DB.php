@@ -1,7 +1,6 @@
 <?php
     class DataBase
     {
-
         private static $instance = NULL;
         private static $servername = '127.0.0.1'; /* LOCALHOST TEST */
         private static $username = 'root'; /* LOCALHOST TEST */

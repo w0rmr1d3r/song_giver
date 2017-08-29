@@ -88,5 +88,4 @@
             return $this->category;
         }
     }
-
 ?>
