@@ -9,7 +9,6 @@ Use it as you please ;)
 	<li>rest uri</li>
 	<li>TODO adjust song div to size</li>
 	<li>upload form ---> check CSS, JS, HTML correct inputs</li>
-	<li>resolve inconsistency with path, filename, and title</li>
 	<li>test footer</li>
 	<li>about section</li>
 	<li>give SQL script for DB</li>

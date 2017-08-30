@@ -8,22 +8,25 @@
         private $album;
         private $category;
 
+        private static const FIXED_PATH = '../song_collector/';
+
         /**
          * Constructor of song
          * @param string $title Song title
+         * @param string $fileName Song file name
          * @param string $artist Song artist
          * @param string $album Song album
          * @param string $category Song category
-         * @param string $path Song path
          * @throws Exception if the params to construct a song are not correct
         */
-        public function __construct($title = NULL, $path = NULL, $artist = 'Artist not found', $album = 'Album not found', $category = 'Category not found')
+        public function __construct($title = NULL, $fileName = NULL, $artist = 'Artist not found', $album = 'Album not found', $category = 'Category not found')
         {
-            if (!is_null($title) && !empty($title) && !is_null($path) && !empty($path))
+            if (!is_null($title) && !empty($title) 
+                && !is_null($fileName) && !empty($fileName))
             {
                 $this->title = $title;
-                $this->path = $path;
-                $this->fileName = $title.'.mp3';
+                $this->path = self::FIXED_PATH . $fileName;
+                $this->fileName = $fileName;
                 $this->artist = $artist;
                 $this->album = $album;
                 $this->category = $category;

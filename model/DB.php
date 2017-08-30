@@ -54,6 +54,8 @@
          */
         public function getRandomSong()
         {
+            // $query = 'SELECT title, artist, album, category, path, file_name FROM Songs ORDER BY RAND() LIMIT 1';
+            // TODO check received song
             $query = 'SELECT title, artist, album, category, path FROM Songs ORDER BY RAND() LIMIT 1';
             
             if ($result = $this->conn->query($query))
@@ -70,6 +72,15 @@
             {
                 throw new Exception('ERROR WHILE QUERY TO DB --- GETTING RANDOM SONG', 500);
             }
+        }
+
+        /**
+         * Inserts a song into the DB
+         * @param Song $newSong Song to be inserted
+         */
+        public function insertSong($newSong)
+        {
+            // TODO
         }
     }
 ?>
