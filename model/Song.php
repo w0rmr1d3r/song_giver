@@ -1,13 +1,25 @@
 <?php
     class Song
     {
+        /* @var string Song title*/
         private $title;
+
+        /* @var string Song path*/
         private $path;
+
+        /* @var string Song file name*/
         private $fileName;
+
+        /* @var string Song artist*/
         private $artist;
+
+        /* @var string Song album*/
         private $album;
+
+        /* @var string Song category*/
         private $category;
 
+        /* @var string Constant server location for files*/
         private static const FIXED_PATH = '../song_collector/';
 
         /**

@@ -1,7 +1,10 @@
 <?php
     final class Logger
     {
+        /* @var string Constant root directory path */
         private const __ROOT__ = '../';
+
+        /* @var string Constant tmp directory path */
         private const __TMP__ = self::__ROOT__.'tmp/';
 
         /**

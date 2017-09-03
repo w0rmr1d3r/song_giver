@@ -1,11 +1,22 @@
 <?php
     class DataBase
     {
+        /* @var DataBase|null Singleton instance of class */
         private static $instance = NULL;
-        private static $servername = '127.0.0.1'; /* LOCALHOST TEST */
-        private static $username = 'root'; /* LOCALHOST TEST */
-        private static $password = ''; /* LOCALHOST TEST */
-        private static $db_name = 'song_giver_db'; /* LOCALHOST TEST */
+
+        /* @var string Server IP - LOCALHOST TEST*/
+        private static $servername = '127.0.0.1';
+
+        /* @var string Server username - LOCALHOST TEST */
+        private static $username = 'root';
+
+        /* @var string Server password - LOCALHOST TEST */
+        private static $password = '';
+
+        /* @var string Database name - LOCALHOST TEST */
+        private static $db_name = 'song_giver_db';
+
+        /* @var mysqli|null Connection object to the database */
         private $conn;
   
         /**
