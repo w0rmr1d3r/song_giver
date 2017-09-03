@@ -1,5 +1,6 @@
 <?php
 	/*
+    require_once('../model/Constants.php');
 
 	check backend if input are corrects
     TODO -> LOG
