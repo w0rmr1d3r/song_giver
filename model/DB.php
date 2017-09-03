@@ -54,15 +54,13 @@
          */
         public function getRandomSong()
         {
-            // $query = 'SELECT title, artist, album, category, path, file_name FROM Songs ORDER BY RAND() LIMIT 1';
-            // TODO check received song
-            $query = 'SELECT title, artist, album, category, path FROM Songs ORDER BY RAND() LIMIT 1';
+            $query = 'SELECT title, artist, album, category, file_name FROM Songs ORDER BY RAND() LIMIT 1';
             
             if ($result = $this->conn->query($query))
             {
                 while ($row = $result->fetch_assoc())
                 {
-                    $receivedSong = new Song($row['title'], $row['path'], $row['artist'], $row['album'], $row['category']);
+                    $receivedSong = new Song($row['title'], $row['file_name'], $row['artist'], $row['album'], $row['category']);
                 }
 
                 $result->free();
