@@ -9,7 +9,7 @@
          */
         public static function logAction($message)
         {
-            error_log($message . "\n", 3, self::$TMP.'user_action.log');
+            error_log('INFO: ' . date('d-m-Y h:i:s') . ' - ' . self::getClientIP() . ' - ' . $message . "\n", 3, self::$TMP.'user_action.log');
         }
 
         /**
@@ -17,7 +17,31 @@
          */
         public static function logError($message)
         {
-            error_log($message . "\n", 3, self::$TMP.'errors.log');
+            error_log('INFO: ' . date('d-m-Y h:i:s') . ' - ' . self::getClientIP() . ' - ' . $message . "\n", 3, self::$TMP.'errors.log');
+        }
+
+        /**
+         * Function to get the client IP address
+         * @return string
+         */
+        private function getClientIP()
+        {
+            $ipaddress = '';
+            if (isset($_SERVER['HTTP_CLIENT_IP']))
+                $ipaddress = $_SERVER['HTTP_CLIENT_IP'];
+            else if(isset($_SERVER['HTTP_X_FORWARDED_FOR']))
+                $ipaddress = $_SERVER['HTTP_X_FORWARDED_FOR'];
+            else if(isset($_SERVER['HTTP_X_FORWARDED']))
+                $ipaddress = $_SERVER['HTTP_X_FORWARDED'];
+            else if(isset($_SERVER['HTTP_FORWARDED_FOR']))
+                $ipaddress = $_SERVER['HTTP_FORWARDED_FOR'];
+            else if(isset($_SERVER['HTTP_FORWARDED']))
+                $ipaddress = $_SERVER['HTTP_FORWARDED'];
+            else if(isset($_SERVER['REMOTE_ADDR']))
+                $ipaddress = $_SERVER['REMOTE_ADDR'];
+            else
+                $ipaddress = 'UNKNOWN';
+            return $ipaddress;
         }
     }
 ?>
