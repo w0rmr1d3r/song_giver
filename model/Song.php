@@ -20,7 +20,7 @@
         private $category;
 
         /* @var string Constant server location for files*/
-        private static const FIXED_PATH = '../song_collector/';
+        private static $FIXED_PATH = '../song_collector/';
 
         /**
          * Constructor of song
@@ -37,7 +37,7 @@
                 && !is_null($fileName) && !empty($fileName))
             {
                 $this->title = $title;
-                $this->path = self::FIXED_PATH . $fileName;
+                $this->path = self::$FIXED_PATH . $fileName;
                 $this->fileName = $fileName;
                 $this->artist = $artist;
                 $this->album = $album;
