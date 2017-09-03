@@ -90,7 +90,24 @@
          */
         public function insertSong($newSong)
         {
-            // TODO
+            $stmt = $this->conn->prepare('INSERT INTO Songs (title, artist, album, category, file_name) VALUES (?, ?, ?, ?, ?)');
+            $stmt->bind_param('ssssssiis', $newSong->getTitle(), $newSong->getArtist(), $newSong->getAlbum(), $newSong->getCategory(), $newSong->getFileName());
+
+            $stmt->execute();
+            $stmt->close();
+        }
+
+        /**
+         * Validates the file name if already exists (false) or not (true)
+         * @param string $fileName Song file name to upload
+         * @return boolean
+         */
+        public function validFileName($fileName)
+        {
+            $stmt = 'SELECT file_name FROM Songs WHERE file_name=' . $fileName . ' LIMIT 1';
+            $result_stmt = $this->conn->query($stmt);
+
+            return ($result_stmt->num_rows == 1 ? false : true);
         }
     }
 ?>

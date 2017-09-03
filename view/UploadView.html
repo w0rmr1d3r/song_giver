@@ -1,6 +1,6 @@
 <h1>Upload a file here!</h1>
 <div id="custom-upload-form-div">
-	<form class="form-horizontal">
+	<form class="form-horizontal" method="POST">
 
         <div class="row">
             <div class="input-group col-md-offset-4 col-md-4 col-xs-offset-2 col-xs-8">
@@ -18,7 +18,7 @@
             <span class="input-group-addon" id="artist-addon">
                 <span class="glyphicon glyphicon-user" aria-hidden="true"></span>
             </span>
-            <input type="text" class="form-control" placeholder="Artist" aria-describedby="artist-addon" name="artist-input" id="artist-input">
+            <input type="text" class="form-control" placeholder="Artist" aria-describedby="artist-addon" name="song-artist-input" id="song-artist-input">
         </div>
         </div>
         
@@ -29,7 +29,7 @@
                 <span class="input-group-addon" id="album-addon">
                     <span class="glyphicon glyphicon-cd" aria-hidden="true"></span>
                 </span>
-                <input type="text" class="form-control" placeholder="Album" aria-describedby="album-addon" name="album-input" id="album-input">
+                <input type="text" class="form-control" placeholder="Album" aria-describedby="album-addon" name="song-album-input" id="song-album-input">
             </div>
         </div>
         
@@ -40,7 +40,7 @@
                 <span class="input-group-addon" id="category-addon">
                     <span class="glyphicon glyphicon-music" aria-hidden="true"></span>
                 </span>
-                <input type="text" class="form-control" placeholder="Category" aria-describedby="category-addon" name="category-input" id="category-input">
+                <input type="text" class="form-control" placeholder="Category" aria-describedby="category-addon" name="song-category-input" id="song-category-input">
             </div>   
         </div>
 
@@ -48,7 +48,7 @@
 
         <div class="row">
             <div class="input-group col-md-offset-4 col-md-4 col-xs-offset-2 col-xs-8">
-                <input type="file" name="file-input" id="file-input" required="true">
+                <input type="file" name="song-file-input" id="song-file-input" required="true">
             </div>
         </div>
         
