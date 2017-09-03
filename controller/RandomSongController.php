@@ -19,18 +19,26 @@
 
         $mySong = $DB->getRandomSong();
 
-        $songTitle = $mySong->getTitle();
-        $songPath = $mySong->getPath();
-        $songFileName = $mySong->getFileName();
-        $songArtist = $mySong->getArtist();
-        $songAlbum = $mySong->getAlbum();
-        $songCategory = $mySong->getCategory();
+        if (!is_null($mySong))
+        {
+            $songTitle = $mySong->getTitle();
+            $songPath = $mySong->getPath();
+            $songFileName = $mySong->getFileName();
+            $songArtist = $mySong->getArtist();
+            $songAlbum = $mySong->getAlbum();
+            $songCategory = $mySong->getCategory();
 
-        Logger::logAction('Song is: ' . $songTitle);
+            Logger::logAction('Song is: ' . $songTitle);
 
-        Logger::logAction('Accessed info about song section');
+            Logger::logAction('Accessed info about song section');
 
-        require_once(__VIEW__.'SongGivenView.php');
+            require_once(__VIEW__.'SongGivenView.php');
+        }
+        else
+        {
+            Logger::logError('Error while getting song - SONG WAS NULL');
+            require_once(__VIEW__.'ErrorView.html');
+        }
     }
     catch (Exception $e)
     {
@@ -40,7 +48,7 @@
     }
     finally
     {
-        Logger:logAction('Closing DB connection');
+        Logger::logAction('Closing DB connection');
         $DB->closeConnection();
     }
 ?>
