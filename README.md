@@ -5,9 +5,8 @@ Use it as you please ;)
 # TODO
 <ul>
 	<li>spoti ?</li>
-	<li>upload songs</li>
 	<li>rest uri</li>
 	<li>TODO adjust song div to size</li>
 	<li>upload form ---> check CSS, JS, HTML correct inputs</li>
-	<li>php filters</li>
+	<li>test file upload (logs, ajax, confirmation/error view)</li>
 </ul>

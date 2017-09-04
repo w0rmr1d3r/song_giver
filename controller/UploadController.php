@@ -42,7 +42,7 @@
             $error = true;
         }
 
-        if (($fileSize > 500000) || ($fileSize <= 0)) // TODO MAGIC NUMBER
+        if (($fileSize > MAX_FILE_SIZE) || ($fileSize <= MIN_FILE_SIZE))
         {
             $message = 'WRONG FILE SIZE';
             $error = true;
@@ -59,21 +59,16 @@
             if (move_uploaded_file($_FILES['song-file-input']['tmp_name'], $uploadPath))
             {
                 $DB->insertSong(new Song($title, $fileName, $artist, $album, $category));
-                // SHOW CONFIRMATION
             }
             else
             {
                 $message = 'ERROR WHILE UPLOADING FILE';
-                $error = true;
             }
         }
-        else
-        {
-            // ERROR
-        }
+        require_once(__VIEW__.'UploadFileConfirmation.php');
     }
     else
     {
-        // NO PARAMS DETECTED
+        require_once(__VIEW__.'ErrorView.html');
     }
 ?>
