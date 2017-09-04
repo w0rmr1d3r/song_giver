@@ -104,6 +104,7 @@
          */
         public function validFileName($fileName)
         {
+            // TODO prepare?
             $stmt = 'SELECT file_name FROM Songs WHERE file_name=' . $fileName . ' LIMIT 1';
             $result_stmt = $this->conn->query($stmt);
 
