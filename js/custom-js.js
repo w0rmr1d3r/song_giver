@@ -98,7 +98,7 @@ function getAboutView() {
 }
 
 /**
- * Uploads a song
+ * Uploads a song to the server
  */
 function uploadSong() {
     console.log('UPLOAD SONG UNDER CONSTRUCTION');

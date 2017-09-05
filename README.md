@@ -8,5 +8,5 @@ Use it as you please ;)
 	<li>rest uri</li>
 	<li>TODO adjust song div to size</li>
 	<li>upload form ---> check CSS, JS, HTML correct inputs</li>
-	<li>test file upload (logs, ajax, confirmation/error view)</li>
+	<li>test file upload (ajax)</li>
 </ul>
