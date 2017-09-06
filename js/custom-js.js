@@ -4,10 +4,21 @@
 */
 
 /*
- Global vars
+ Global vars and const
 */
+
+/* HTML download section id */
+const DOWNLOAD_SECTION = 'custom-download-li';
+
+/* HTML upload section id */
+const UPLOAD_SECTION = 'custom-upload-li';
+
+/* HTML about section id */
+const ABOUT_SECTION = 'custom-about-li';
+
 /* Current selected section, by default download section */
-var currentSelected = 'custom-download-li';
+var currentSelected = DOWNLOAD_SECTION;
+
 
 /**
  * Gets an object XMLHTTP for each browser
@@ -58,7 +69,7 @@ function getUploadView() {
     xmlhttp.open('POST', '../controller/UploadSongController.php');
     xmlhttp.send();
 
-    setSelectedSection('custom-upload-li');
+    setSelectedSection(UPLOAD_SECTION);
 }
 
 /**
@@ -76,7 +87,7 @@ function getDownloadView() {
     xmlhttp.open('POST', '../controller/DownloadSongController.php');
     xmlhttp.send();
 
-    setSelectedSection('custom-download-li');
+    setSelectedSection(DOWNLOAD_SECTION);
 }
 
 /**
@@ -94,7 +105,7 @@ function getAboutView() {
     xmlhttp.open('POST', '../controller/AboutController.php');
     xmlhttp.send();
 
-    setSelectedSection('custom-about-li');
+    setSelectedSection(ABOUT_SECTION);
 }
 
 /**
