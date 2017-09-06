@@ -40,8 +40,7 @@
     }
     catch (Exception $e)
     {
-        Logger::logError('Error while getting song');
-        Logger::logError($e->getMessage() . $e->getCode() . $e->getFile() . $e->getLine());
+        Logger::logError('Error while getting song' . $e->getMessage() . $e->getCode() . $e->getFile() . $e->getLine());
         require_once(__VIEW__.'ErrorView.html');
     }
     finally

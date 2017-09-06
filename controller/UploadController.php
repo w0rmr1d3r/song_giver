@@ -30,7 +30,9 @@
         $uploadPath = $target_dir . basename($fileName);
         $fileType = pathinfo($uploadPath, PATHINFO_EXTENSION);
         $fileSize = $_FILES['song-file-input']['size'];
+
         Logger::logAction('Params received, starting error checking');
+
         $error = false;
         $message = 'FILE UPLOADED CORRECTLY';
 

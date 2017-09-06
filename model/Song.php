@@ -33,8 +33,7 @@
         */
         public function __construct($title = NULL, $fileName = NULL, $artist = 'Artist not found', $album = 'Album not found', $category = 'Category not found')
         {
-            if (!is_null($title) && !empty($title) 
-                && !is_null($fileName) && !empty($fileName))
+            if (!is_null($title) && !empty($title) && !is_null($fileName) && !empty($fileName))
             {
                 $this->title = $title;
                 $this->path = self::$FIXED_PATH . $fileName;
