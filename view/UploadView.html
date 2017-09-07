@@ -1,6 +1,6 @@
 <h1>Upload a file here!</h1>
 <div id="custom-upload-form-div">
-	<form class="form-horizontal" method="POST">
+	<form action="../controller/UploadController.php" class="form-horizontal" method="post" enctype="multipart/form-data" onsubmit="uploadSong()">
 
         <div class="row">
             <div class="input-group col-md-offset-4 col-md-4 col-xs-offset-2 col-xs-8">
@@ -51,10 +51,12 @@
                 <input type="file" name="song-file-input" id="song-file-input" required="true">
             </div>
         </div>
-        
-        <a onclick="uploadSong()" href="#" class="btn btn-primary btn-lg" title="Upload">
-        	<span class="glyphicon glyphicon-cloud-upload" aria-hidden="true"></span>
-        </a>
+
+        <div class="row">
+            <div class="input-group col-md-offset-4 col-md-4 col-xs-offset-2 col-xs-8">
+                <input type="submit" class="btn btn-primary btn-lg" value="Upload" name="submit">
+            </div>
+        </div>
 
 	</form>
 </div>

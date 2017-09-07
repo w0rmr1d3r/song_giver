@@ -1,4 +1,5 @@
 <?php
+    require_once('../model/Constants.php');
     /**
      * Function anti-XSS, returns correct data
      * @param string $data Data received
@@ -12,10 +13,9 @@
     require_once(__ROOT__.'model/Logger.php');
     Logger::logAction('Trying to upload file');
 
-    if($_POST)
+    if(isset($_POST['submit']))
     {
         Logger::logAction('Upload detected');
-        require_once('../model/Constants.php');
         require_once(__MODEL__.'DB.php');
 
         $DB = DataBase::getInstance();
@@ -27,7 +27,7 @@
 
         $fileName = $_FILES['song-file-input']['name'];
         $uploadDirectory = __ROOT__ . 'song_collector/';
-        $uploadPath = $target_dir . basename($fileName);
+        $uploadPath = $uploadDirectory . basename($fileName);
         $fileType = pathinfo($uploadPath, PATHINFO_EXTENSION);
         $fileSize = $_FILES['song-file-input']['size'];
 
@@ -47,21 +47,21 @@
         {
             $message = 'FILE ALREADY EXISTS';
             $error = true;
-            Logger::logAction('FILE ALREADY EXISTS');
+            Logger::logError('FILE ALREADY EXISTS');
         }
 
         if (($fileSize > MAX_FILE_SIZE) || ($fileSize <= MIN_FILE_SIZE))
         {
             $message = 'WRONG FILE SIZE';
             $error = true;
-            Logger::logAction('FILE SIZE OUTSIDE LIMITS');
+            Logger::logError('FILE SIZE OUTSIDE LIMITS');
         }
 
-        if ($imageFileType != 'mp3' && $imageFileType != 'wav')
+        if ($fileType != 'mp3' && $fileType != 'wav')
         {
             $message = 'WRONG FILE EXTENSION';
             $error = true;
-            Logger::logAction('TRIED TO UPLOAD NON-AUDIO FILE');
+            Logger::logError('TRIED TO UPLOAD NON-AUDIO FILE');
         }
 
         if (!$error)
@@ -69,6 +69,7 @@
             Logger::logAction('No error detected so far, trying to upload file now');
             if (move_uploaded_file($_FILES['song-file-input']['tmp_name'], $uploadPath))
             {
+                require_once(__MODEL__.'Song.php');
                 $DB->insertSong(new Song($title, $fileName, $artist, $album, $category));
                 Logger::logAction('File uploaded and inserted into DB');
             }
