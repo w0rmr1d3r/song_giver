@@ -19,7 +19,9 @@
         require_once(__MODEL__.'DB.php');
 
         $DB = DataBase::getInstance();
+
         Logger::logAction('Connected to DB, receiving params...');
+        
         $title = preg_replace('(/^[a-zA-Z0-9 "!?.-]+$/)', '', cleanInput($_POST['song-title-input']));
         $artist = preg_replace('(/^[a-zA-Z0-9 "!?.-]+$/)', '', cleanInput($_POST['song-artist-input']));
         $album = preg_replace('(/^[a-zA-Z0-9 "!?.-]+$/)', '', cleanInput($_POST['song-album-input']));

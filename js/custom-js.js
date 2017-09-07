@@ -108,6 +108,28 @@ function getAboutView() {
     setSelectedSection(ABOUT_SECTION);
 }
 
+/**
+ * Uploads a song to the server
+ */
+/*
+function uploadSong() {
+    console.log('UPLOAD SONG UNDER CONSTRUCTION');
+
+    // TODO check params here
+    
+    var xmlhttp = getXMLHTTP();
+
+    xmlhttp.onreadystatechange = function() {
+        if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
+            var div = document.getElementById('custom-main-container');
+            div.innerHTML = xmlhttp.responseText;
+        }
+    };
+    xmlhttp.open('POST', '../controller/UploadController.php');
+    xmlhttp.send();
+}
+*/
+
 /* When document is ready, by default give download view */
 $('document').ready(
     function() {
