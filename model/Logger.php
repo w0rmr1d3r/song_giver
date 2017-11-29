@@ -4,12 +4,15 @@
         /* @var string Constant tmp directory path */
         private static $TMP = '../tmp/';
 
+        /* @var string Filename where the logs are stored */
+        private static $LOG_FILENAME = 'useraction.log';
+
         /**
          * Logs a user action
          */
         public static function logAction($message)
         {
-            error_log('INFO: ' . date('d-m-Y h:i:s') . ' - ' . self::getClientIP() . ' - ' . $message . "\n", 3, self::$TMP . 'useraction.log');
+            error_log('INFO: ' . date('d-m-Y h:i:s') . ' - ' . self::getClientIP() . ' - ' . $message . "\n", 3, self::$TMP . self::$LOG_FILENAME);
         }
 
         /**
@@ -17,7 +20,7 @@
          */
         public static function logError($message)
         {
-            error_log('ERROR: ' . date('d-m-Y h:i:s') . ' - ' . self::getClientIP() . ' - ' . $message . "\n", 3, self::$TMP . 'useraction.log');
+            error_log('ERROR: ' . date('d-m-Y h:i:s') . ' - ' . self::getClientIP() . ' - ' . $message . "\n", 3, self::$TMP . self::$LOG_FILENAME);
         }
 
         /**
